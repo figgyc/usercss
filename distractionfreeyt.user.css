@@ -1,0 +1,28 @@
+/* ==UserStyle==
+@name         Distraction-Free YouTube
+@description  Set YouTube to Theater Mode (press T).
+@namespace    github.com/figgyc/usercss
+@version      1.0.0
+@license      MIT
+@preprocessor default
+@author       figgyc
+@homepageURL  https://figgyc.uk/usercss
+@updateURL    https://raw.githubusercontent.com/figgyc/usercss/master/distractionfreeyt.user.css
+==/UserStyle== */
+
+@-moz-document domain("youtube.com") {
+    #secondary.ytd-watch-flexy , /* Recommended Sidebar */
+    #sections.ytd-guide-renderer:first-child :first-child div#items > :first-child,  /* Home */
+    #sections.ytd-guide-renderer:first-child :first-child div#items > :first-child + * , /* Explore/Trending */
+    [page-subtype="home"], /* Home*/
+    ytd-guide-renderer #sections > ytd-guide-section-renderer:nth-child(3), /* More from YouTube */
+    ytd-guide-renderer #sections > ytd-guide-section-renderer:nth-child(4), /* Pre-footer */
+    ytd-guide-renderer #footer, /* Footer */
+    ytd-notification-topbar-button-renderer, /* Notifications */
+    ytd-topbar-menu-button-renderer:not(:last-child), /* Upload, Apps, etc */
+    .ytd-comments #contents,
+    .ytd-comments #header #title
+    {
+        display: none !important;
+    }
+}
