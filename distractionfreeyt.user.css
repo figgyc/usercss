@@ -11,6 +11,7 @@
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
+    #related.ytd-watch-flexy /* Recommended below video */
     #secondary.ytd-watch-flexy , /* Recommended Sidebar */
     #sections.ytd-guide-renderer:first-child :first-child div#items > :first-child,  /* Home */
     #sections.ytd-guide-renderer:first-child :first-child div#items > :first-child + * , /* Explore/Trending */
