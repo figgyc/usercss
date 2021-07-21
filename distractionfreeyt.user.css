@@ -15,6 +15,8 @@
     #secondary.ytd-watch-flexy , /* Recommended Sidebar */
     #sections.ytd-guide-renderer:first-child :first-child div#items > :first-child,  /* Home */
     #sections.ytd-guide-renderer:first-child :first-child div#items > :first-child + * , /* Explore/Trending */
+    ytd-mini-guide-renderer div#items > :first-child,  /* Home (mini guide) */
+    ytd-mini-guide-renderer div#items > :first-child + * , /* Explore (mini) */
     [page-subtype="home"], /* Home*/
     ytd-guide-renderer #sections > ytd-guide-section-renderer:nth-child(3), /* More from YouTube */
     ytd-guide-renderer #sections > ytd-guide-section-renderer:nth-child(4), /* Pre-footer */
