@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Distraction-Free YouTube
-@description  Set YouTube to Theater Mode (press T).
+@description  Set YouTube to Theater Mode (press T), and disable autoplay before installing this style.
 @namespace    github.com/figgyc/usercss
 @version      1.0.0
 @license      MIT
@@ -22,7 +22,10 @@
     ytd-notification-topbar-button-renderer, /* Notifications */
     ytd-topbar-menu-button-renderer:not(:last-child), /* Upload, Apps, etc */
     .ytd-comments #contents,
-    .ytd-comments #header #title
+    .ytd-comments #header #title,
+    .ytp-autonav-endscreen-countdown-container, /* Autoplay next up */
+    .html5-endscreen.ytp-show-tiles, /* Recommended at end of video */
+    [data-tooltip-target-id="ytp-autonav-toggle-button"] /* Autoplay button */
     {
         display: none !important;
     }
