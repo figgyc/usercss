@@ -2,7 +2,7 @@
 @name         Full Focus for YouTube
 @description  A userstyle to help you avoid wasting time on YouTube. Set Theater Mode (press T), and disable autoplay before installing this style.
 @namespace    github.com/figgyc/usercss
-@version      1.0.3
+@version      1.0.4
 @license      MIT
 @preprocessor less
 @author       figgyc
@@ -32,6 +32,7 @@
     .ytd-comments #header #title,
     .ytp-autonav-endscreen-countdown-container, /* Autoplay next up */
     .html5-endscreen.ytp-show-tiles, /* Recommended at end of video */
+    .ytp-next-button:not(.ytp-prev-button[aria-disabled="false"] ~ .ytp-next-button), /* Next button (except on playlists) */
     [data-tooltip-target-id="ytp-autonav-toggle-button"] /* Autoplay button */
     {
         display: none !important;
