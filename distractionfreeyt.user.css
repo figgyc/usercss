@@ -2,12 +2,13 @@
 @name         Distraction-Free YouTube
 @description  Set YouTube to Theater Mode (press T), and disable autoplay before installing this style.
 @namespace    github.com/figgyc/usercss
-@version      1.0.1
+@version      1.0.2
 @license      MIT
-@preprocessor default
+@preprocessor less
 @author       figgyc
 @homepageURL  https://figgyc.uk/usercss
 @updateURL    https://raw.githubusercontent.com/figgyc/usercss/main/distractionfreeyt.user.css
+@var          checkbox notifications "Show notifications button (button only)" 0
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
@@ -21,7 +22,8 @@
     ytd-guide-renderer #sections > ytd-guide-section-renderer:nth-child(3), /* More from YouTube */
     ytd-guide-renderer #sections > ytd-guide-section-renderer:nth-child(4), /* Pre-footer */
     ytd-guide-renderer #footer, /* Footer */
-    ytd-notification-topbar-button-renderer, /* Notifications */
+    #notification-count, /* Notification count */
+    ytd-notification-renderer, /* Notifications */
     ytd-topbar-menu-button-renderer:not(:last-child), /* Upload, Apps, etc */
     .ytd-comments #contents,
     .ytd-comments #header #title,
@@ -31,4 +33,16 @@
     {
         display: none !important;
     }
+
+    /* 
+       The reason I added a way to click the notification button but not see the notifications
+       is because notifications are distracting (not just videos, but also comment replies,
+       community posts, etc), but what's more distracting is how the tab title has the number of
+       unread notifications in it, and I wanted a way to clear it without turning the style off.
+    */
+    ytd-notification-topbar-button-renderer /* Notifications button */
+    { 
+        display: if((@notifications = 1), flex, none);
+    }
+
 }
