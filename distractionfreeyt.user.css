@@ -1,14 +1,17 @@
 /* ==UserStyle==
-@name         Distraction-Free YouTube
-@description  Set YouTube to Theater Mode (press T), and disable autoplay before installing this style.
+@name         Full Focus for YouTube
+@description  A userstyle to help you avoid wasting time on YouTube. Set Theater Mode (press T), and disable autoplay before installing this style.
 @namespace    github.com/figgyc/usercss
-@version      1.0.2
+@version      1.0.3
 @license      MIT
 @preprocessor less
 @author       figgyc
 @homepageURL  https://figgyc.uk/usercss
 @updateURL    https://raw.githubusercontent.com/figgyc/usercss/main/distractionfreeyt.user.css
 @var          checkbox notifications "Show notifications button (button only)" 0
+@var          checkbox subscriptions "Show Subscriptions feed" 1
+@var          checkbox subssidebar "Show Subscriptions list on sidebar" 1
+@var          checkbox youtubelogo "Show YouTube logo at top left" 0
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
@@ -34,15 +37,32 @@
         display: none !important;
     }
 
-    /* 
+    /*
        The reason I added a way to click the notification button but not see the notifications
        is because notifications are distracting (not just videos, but also comment replies,
-       community posts, etc), but what's more distracting is how the tab title has the number of
+       community posts, etc), but what's also distracting is how the tab title has the number of
        unread notifications in it, and I wanted a way to clear it without turning the style off.
     */
     ytd-notification-topbar-button-renderer /* Notifications button */
-    { 
+    {
         display: if((@notifications = 1), flex, none);
+    }
+
+    [page-subtype="subscriptions"], /* Subscriptions feed */
+    #sections.ytd-guide-renderer:first-child :first-child div#items > :first-child + * + *,/* Subscriptions button */
+    ytd-mini-guide-renderer div#items > :first-child + * + */* Subscriptions button (mini guide) */
+    {
+        display: if((@subscriptions = 1), flex, none);
+    }
+
+    ytd-topbar-logo-renderer /* YouTube logo */
+    {
+        display: if((@youtubelogo = 1), flex, none);
+    }
+
+    ytd-guide-renderer #sections > ytd-guide-section-renderer:nth-child(2) /* Subscriptions list */
+    {
+        display: if((@subssidebar = 1), block, none);
     }
 
 }
