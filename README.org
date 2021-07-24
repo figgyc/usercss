@@ -1,8 +1,2 @@
 * figgyc's UserCSS
-These files are designed to be used with [[https://github.com/openstyles/stylus#stylus][Stylus]] or another usercss compatible extension.
-
-** Full Focus for YouTube [[https://raw.githubusercontent.com/figgyc/usercss/main/distractionfreeyt.user.css][📦 Install]]
-[[./preview/distractionfreeyt.png]]
-- Removes Trending and Home sections of the sidebar.
-- Blanks out the Home page (when you click on the YouTube logo you will have to click into subscriptions)
-- Hides Notifications and a bunch of other visual clutter.
+See details on [[https://figgyc.uk/projects/usercss][my website]].
