@@ -2,7 +2,7 @@
 @name         Full Focus for Wolfram Alpha
 @description  A userstyle to remove visual clutter from Wolfram Alpha.
 @namespace    github.com/figgyc/usercss
-@version      1.0.1
+@version      1.0.2
 @license      MIT
 @preprocessor less
 @author       figgyc
@@ -14,12 +14,12 @@
     nav [href="/examples"], /* Examples button */
     nav [href="/examples"] + * + *, /* Random button */
     nav button :nth-child(2), /* Below search button labels */
-    main > div:first-child ul li button span, /* "Natural Language" / "Math Input" text*/
+    main > div:first-of-type ul li button span, /* "Natural Language" / "Math Input" text*/
     a[href="/"], /* WA logo */
     a[href="https://www.wolfram.com/language/index.html.en"], /* Powered by the Wolfram Language logo */
+    a[href="https://www.wolframalpha.com/pro/pricing/students"], /* Ad banner */
     main div + div > div > div > div:last-child, /* Support links */
     main div + div > div > div > section:nth-last-child(2), /* Related Queries */
-    main div + div div div section, /* Advertisements sidebar */
     header nav, /* Top bar */
     footer, /* Footer */
     span + section, /* Main page: Topics */
