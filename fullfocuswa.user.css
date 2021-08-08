@@ -1,0 +1,32 @@
+/* ==UserStyle==
+@name         Full Focus for Wolfram Alpha
+@description  A userstyle to remove visual clutter from Wolfram Alpha.
+@namespace    github.com/figgyc/usercss
+@version      1.0.0
+@license      MIT
+@preprocessor less
+@author       figgyc
+@homepageURL  https://figgyc.uk/projects/usercss
+@updateURL    https://raw.githubusercontent.com/figgyc/usercss/main/fullfocuswa.user.css
+==/UserStyle== */
+
+@-moz-document domain("www.wolframalpha.com") {
+    nav [href="/examples"], /* Examples button */
+    nav [href="/examples"] + * + *, /* Random button */
+    nav button :nth-child(2), /* Below search button labels */
+    ul li button span, /* "Natural Language" / "Math Input" text*/
+    a[href="/"], /* WA logo */
+    a[href="https://www.wolfram.com/language/index.html.en"], /* Powered by the Wolfram Language logo */
+    div div div div + section, /* Related Queries */
+    div div div div + section + div, /* Support links */
+    main div + div div div + div + div *, /* Advertisements sidebar */
+    header nav, /* Top bar */
+    footer, /* Footer */
+    span + section, /* Main page: Topics */
+    div [style="padding-top: 2px;"], /* Main page: try out math notation popup */
+    a[href="https://www.wolframalpha.com/tour/"], /* Main page: "Made possible by the Wolfram Language" footer */
+    header + div div div + span /* Main page: "Computer expert-level answers" */
+    {
+        display: none !important;
+    }
+}
