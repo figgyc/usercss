@@ -19,7 +19,7 @@
     a[href="https://www.wolfram.com/language/index.html.en"], /* Powered by the Wolfram Language logo */
     main div + div > div > div > div:last-child, /* Support links */
     main div + div > div > div > section:nth-last-child(2), /* Related Queries */
-    main div + div div div secion, /* Advertisements sidebar */
+    main div + div div div section, /* Advertisements sidebar */
     header nav, /* Top bar */
     footer, /* Footer */
     span + section, /* Main page: Topics */
